@@ -1,12 +1,11 @@
 // app/page.tsx
-import { supabase } from '../lib/supabaseClient'
+import { supabase } from '../lib/supabaseClient';
 
 export default async function Page() {
   // On tente de lire une table 'media' (tu la créeras ensuite dans Supabase)
   const { data, error } = await supabase
-    .from('media')
+    .from('vehicles')
     .select('id, title, url')
-    .limit(10)
 
   return (
     <div>
